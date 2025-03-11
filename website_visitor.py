@@ -49,8 +49,7 @@ class WebsiteVisitor:
                 print(f"ищем на странице {page + 1}/{max_pages}")
 
                 if self._find_and_click_target(driver, target_website):
-                    visit_time = random.uniform(3.0, 8.0)
-                    print(f"заходим на сайт и ждем {visit_time:.1f} секунд")
+                    visit_time = random.uniform(0.1, 0.3) # время, которое проводим на сайте до того, как свалим с него
                     time.sleep(visit_time)
                     driver.quit()
                     return True
@@ -58,19 +57,19 @@ class WebsiteVisitor:
                 # не нашли — ищем на следующей
                 if page < max_pages - 1:
                     if not self._go_to_next_page(driver):
-                        print("больше нечего ловить")
                         break
                     time.sleep(random.uniform(1.0, 3.0))
 
-            print(f"Could not find {target_website} within {max_pages} pages")
+            print(f"не нашел сайт {target_website} на {max_pages} страницах")
             return False
 
         except Exception as e:
-            driver.save_screenshot(f"error_{int(time.time())}.png")
+            driver.save_screenshot(f"error_{int(time.time())}.png") # если ошибка, скриним ее
             return False
         finally:
             driver.quit()
 
+    # определяем капчу
     def _check_captcha(self, driver):
         captcha_indicators = [
             '//input[@name="rep"]',
@@ -132,5 +131,4 @@ class WebsiteVisitor:
 
             return False  # если не нашли кнопку слдеующей страницы
         except Exception as e:
-            print(f"Error navigating to next page: {e}")
             return False
