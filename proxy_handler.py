@@ -8,7 +8,7 @@ import requests
 
 def get_random_proxy():
     try:
-        proxy_file = "proxies.json" # файл с проксями. должен содержать ip и порт
+        proxy_file = "results.json" # файл с проксями. должен содержать ip и порт
         if not os.path.exists(proxy_file):
             print(f"Proxy file {proxy_file} not found")
             return None
