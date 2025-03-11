@@ -21,7 +21,7 @@ def get_random_proxy():
             return None
 
         selected_proxy = random.choice(proxy_data)
-        ip, port = selected_proxy.get('ip'), selected_proxy.get('port')
+        ip, port = selected_proxy.get('IP_Address'), selected_proxy.get('Port')
 
         if not ip or not port:
             print("Selected proxy missing IP or port")
