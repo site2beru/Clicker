@@ -26,7 +26,7 @@ from website_visitor import WebsiteVisitor
 
 def main():
     visitor = WebsiteVisitor()
-    target_website = "afanasy.biz" # что ищем
+    target_website = "tverlife.ru" # что ищем (ТЖ по этому запросу примерно на третьей-четвертой странице)
     search_keywords = ["новости тверь"] # запросы
 
     # глубина страниц и использование прокси
