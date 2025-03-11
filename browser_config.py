@@ -1,4 +1,5 @@
 # настройки браузера и куки
+# робот запускается в Хроме, открывая его. можно попробовать добавить в options "headless"
 
 import random
 from selenium import webdriver
