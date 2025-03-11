@@ -26,8 +26,8 @@ from website_visitor import WebsiteVisitor
 
 def main():
     visitor = WebsiteVisitor()
-    target_website = "mastweb.ru"
-    search_keywords = ["разработка сайтов тверь"]
+    target_website = "afanasy.biz" # что ищем
+    search_keywords = ["новости тверь"] # запросы
 
     # глубина страниц и использование прокси
     for i in range(3):
